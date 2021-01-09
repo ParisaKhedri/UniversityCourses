@@ -1,0 +1,41 @@
+1- Hur inkluderar man externa bibliotek, t.ex. Volley, i ett Android-projekt?
+
+Man inkluderar externa bibliotek genom att lägga till implementationer i 
+build.gradle filen, t.ex. implementation 'com.android.volley:volley:1.1.1'
+för Volley bibliotek.
+
+2- Vad är Java beans för något? Vad är det för fördel med att använda 
+biblioteket gson, gentemot den inbyggda json-parsern?
+
+Java Beans är standardiserade java klasser som kapslar in många objekt i ett 
+enda objekt(bean). De ska följa följande konventioner: 
+1)måste implementera Serializable, 
+2) måste innehålla public tom konstruktor, public getters och setters, 
+3) alla andra egenskaper ska vara privata.
+
+Gson är ett Java-bibliotek som kan användas för att konvertera Java-objekt till 
+deras JSON-representation. Det kan också användas för att konvertera en 
+JSON-sträng till ett motsvarande Java-objekt. Gson kan arbeta med godtyckliga 
+Java-objekt inklusive befintliga objekt som du inte har källkod för.
+
+GSON kan använda Objektdefinitionen för att direkt skapa ett objekt av 
+önskad typ. JSONObject måste bli parsed manuellt. 
+
+org.json är ett enkelt, trädstil API. Den största svagheten är att det kräver 
+att du laddar hela JSON-dokumentet i en sträng innan du kan parse det. För stora
+JSON-dokument kan detta vara ineffektivt.
+
+Den överlägset största svagheten i implementeringen av org.json är JSONException.
+Det är inte bekvämt att behöva placera ett try / catch runt alla dina JSON-grejer.
+
+Gson är det bästa API för JSON-parsing på Android. Den har en mycket liten binär
+storlek (under 200 KiB), gör snabb databinding och har ett enkelt 
+användarvänligt API.
+
+GSON är en av de mest populära lösningarna för att hantera JSON-data i 
+java-världen.
+
+3- Vad är den viktigaste, mest centrala frågan, som ni har behövt Googla på 
+under laborationens gång?
+
+Hur man hämtar data från en url på Android Studio.

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/PostObjectImage"
+        android:layout_width="match_parent"
+        android:layout_height="378dp"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/PostObjectContent"
+        android:layout_width="398dp"
+        android:layout_height="281dp"
+        android:layout_below="@+id/PostObjectImage"
+        android:layout_marginTop="62dp"
+        android:text="PostObjCont" />
+</RelativeLayout>
