@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;found_bump&apos; in &apos;tddc17.MyAgentProgram&apos; to &apos;found_first_bump&apos;&#x0D;&#x0A;- Original project: &apos;project&apos;&#x0D;&#x0A;- Original element: &apos;tddc17.MyAgentProgram.found_bump&apos;&#x0D;&#x0A;- Renamed element: &apos;tddc17.MyAgentProgram.found_first_bump&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;found_bump&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/&lt;tddc17{MyVacuumAgent.java[MyAgentProgram^found_bump" name="found_first_bump" references="true" setter="false" stamp="1631091270719" textual="false" version="1.0"/>
+</session>

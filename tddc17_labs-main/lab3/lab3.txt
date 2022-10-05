@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>tampering</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7260.0, 5105.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>fire</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7341.0, 5114.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>alarm</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7295.0, 5205.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>smoke</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7406.0, 5190.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>leaving</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7276.0, 5293.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>report</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7248.0, 5394.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Seesmoke</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7461.0, 5276.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="decision">
+	<NAME>checksmoke</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7347.0, 5328.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="decision">
+	<NAME>call</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7523.0, 5411.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="utility">
+	<NAME>Utility</NAME>
+	<PROPERTY>position = (7556.0, 5111.0)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>tampering</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>fire</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>alarm</FOR>
+	<GIVEN>tampering</GIVEN>
+	<GIVEN>fire</GIVEN>
+	<TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>smoke</FOR>
+	<GIVEN>fire</GIVEN>
+	<TABLE>0.5 0.5 0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>leaving</FOR>
+	<GIVEN>alarm</GIVEN>
+	<TABLE>0.5 0.5 0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>report</FOR>
+	<GIVEN>leaving</GIVEN>
+	<TABLE>0.5 0.5 0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Seesmoke</FOR>
+	<GIVEN>smoke</GIVEN>
+	<GIVEN>checksmoke</GIVEN>
+	<TABLE>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>checksmoke</FOR>
+	<GIVEN>report</GIVEN>
+	<TABLE>0 1</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>call</FOR>
+	<GIVEN>report</GIVEN>
+	<GIVEN>Seesmoke</GIVEN>
+	<GIVEN>checksmoke</GIVEN>
+	<TABLE>0 1 0 0 0 1 0 1</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Utility</FOR>
+	<GIVEN>fire</GIVEN>
+	<GIVEN>checksmoke</GIVEN>
+	<GIVEN>call</GIVEN>
+	<TABLE>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>

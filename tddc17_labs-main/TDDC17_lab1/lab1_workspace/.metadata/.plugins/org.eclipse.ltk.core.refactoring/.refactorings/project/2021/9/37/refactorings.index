@@ -1,0 +1,4 @@
+1630840876077	Rename field 'visitedNodes'
+1630840897789	Rename field 'neighbourQueue'
+1630843885098	Rename method 'nodeIsVisited'
+1630845615949	Rename local variable 'y_offset'

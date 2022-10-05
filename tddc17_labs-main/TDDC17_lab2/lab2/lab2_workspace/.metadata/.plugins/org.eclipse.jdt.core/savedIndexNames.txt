@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\julia\TDDC17_PROJECTS\tddc17_labs\TDDC17_lab2\lab2\lab2_workspace\.metadata\.plugins\org.eclipse.jdt.core
+765819617.index
+4273624790.index
